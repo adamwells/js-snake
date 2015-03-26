@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Snake</title>
+    <script src="../js/jquery-2.1.1.js"></script>
+    <script src="../js/board.js"></script>
+    <script src="../js/snake.js"></script>
+  </head>
+  <body>
+    <div class="snake-game">
+
+    </div>
+
+    <script>
+      var $el = $(".snake-game");
+      var $grid = $("<div class='grid'></div>");
+      var $row = $("<div class='row'></div>");
+      var $square = $("<div class='square'></div>");
+
+      var board = new S.Board();
+
+      for (var i = 0; i < board.size; i++) {
+        $row.append($square);
+      }
+
+      for (var j = 0; j < board.size; j++) {
+        $grid.append($row);
+      }
+
+      $el.append($grid);
+
+      window.setInterval(function() {
+        board.update();
+      }, 1000);
+    </script>
+  </body>
+</html>
