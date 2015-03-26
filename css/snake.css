@@ -1,0 +1,20 @@
+.square {
+  width: 40px;
+  height: 40px;
+  background-color: gray;
+  border: 3px solid white;
+  float: left;
+  border-radius: 10px;
+
+  transition: background-color 1s;
+}
+
+.square:hover {
+  background-color: red;
+}
+
+.row {
+  width: 460px;
+  height: 46px;
+  background-color: white;
+}

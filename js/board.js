@@ -42,8 +42,6 @@
   Board.prototype.update = function() {
     this.setupBoard();
     this.snake.move();
-
     this.placeSnake();
-    this.render();
   };
 }());
