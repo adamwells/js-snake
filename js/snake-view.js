@@ -34,6 +34,7 @@
   };
 
   View.prototype.renderSnake = function() {
+    this.refresh();
     var positions = this.segmentPositions();
     for (var i = 0; i < positions.length; i++) {
       var $square = $("[data-row=" + positions[i][0] + "][data-col=" + positions[i][1] + "]");
@@ -42,12 +43,32 @@
     }
   };
 
+  View.prototype.refresh = function() {
+    var $squares = $(".square");
+    $squares.css('background-color', 'lightgray');
+  };
+
   View.prototype.update = function() {
     this.board.update();
   };
 
 
   View.prototype.bindEvents = function() {
+    var view = this;
+    key('left', function() {
+      view.board.snake.segments[0].dir = "left";
+    });
 
+    key('right', function() {
+      view.board.snake.segments[0].dir = "right";
+    });
+
+    key('up', function() {
+      view.board.snake.segments[0].dir = "up";
+    });
+
+    key('down', function() {
+      view.board.snake.segments[0].dir = "down";
+    });
   };
 })();

@@ -11,6 +11,7 @@
 
     </div>
 
+    <script src="../js/keymaster.js"></script>
     <script src="../js/jquery-2.1.1.js"></script>
     <script src="../js/board.js"></script>
     <script src="../js/snake.js"></script>
@@ -22,11 +23,12 @@
       var view = new S.View(board, $el);
       view.setupBoard();
       view.renderSnake();
+      view.bindEvents();
 
       window.setInterval(function() {
         view.update();
         view.renderSnake();
-      }, 1000);
+      }, 500);
     </script>
   </body>
 </html>
